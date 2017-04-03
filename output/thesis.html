@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="Content-Style-Type" content="text/css" />
+        <meta name="generator" content="pandoc" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+                        <title></title>
+        <style type="text/css">code{white-space: pre;}</style>
+                                                    <style>
+            body {
+                font-family: Georgia;
+                max-width: 800px;
+                margin: 0 auto;
+                line-height: 30px;
+                font-size: 18px;
+                padding-left: 350px;
+                padding-right: 50px;
+                color: #111;
+            }
+            
+            h1, h2, h3, h4, h5, h6 {
+                font-family: Arial;
+            }
+            
+            h1 {
+                padding-top: 200px;
+                line-height: 50px;
+            }
+            h2 {
+                padding-top: 30px;
+            }
+            h3 {
+                padding-top: 20px;
+            }
+            h4 {
+                padding-top: 10px;
+            }
+            p {
+                text-align: justify;
+            }
+            p a {
+                word-wrap: break-word;
+                white-space: pre;
+            }
+            code {
+                word-wrap: break-word;
+            }
+            blockquote {
+                border-left: 3px solid #eee;
+                margin-left: 20px;
+                padding-left: 20px;
+            }
+            
+            ::selection {
+                background-color: #E4E4E4;
+            }
+            
+            table {
+                width: 100%;
+            }
+            table caption {
+                font-weight: bold;
+            }
+            table tr {
+                padding: 0;
+                margin: 0;
+                background-color: #f0f0f0;
+            }
+            table tr.even {
+                background-color: #fafafa;
+            }
+            table td {
+                margin: 0;
+                padding: 3px 5px;
+            }
+            
+            p span.added {
+                color: green;
+                background-color: #FFF3C5;
+            }
+            p span.removed {
+                color: red;
+                background-color: #FFF3C5;
+            }
+            
+            #title-page {
+                padding: 80px 0;
+            }
+            
+            #TOC {
+                position: fixed;
+                left: 0;
+                top: 0;
+                overflow-y: scroll;
+                height: 100%;
+                background: #fafafa;
+                max-width: 300px;
+                font-family: Arial;
+                font-size: 15px;
+                line-height: 30px;
+            }
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+            ::-webkit-scrollbar-track {
+                background-color: #ECECEC;
+            }
+            ::-webkit-scrollbar-thumb {
+                background-color: #B0B0B0;
+                border-radius: 8px;
+            }
+            #TOC > ul {
+                padding-right: 10px;
+            }
+            #TOC ul {
+                list-style: none;
+                padding-left: 20px;
+            }
+            #TOC ul li a {
+                text-decoration: none;
+                color: #364149;
+                text-overflow: ellipsis;
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+            #TOC ul li a:hover {
+                color: #008cff;
+            }
+            
+            .figure {
+                text-align: center;
+            }
+            .figure p {
+                text-align: center;
+                font-style: italic;
+            }
+            .figure img {
+                  width: 100%;
+            }
+            </style>
+                <script src="js/jquery.js"></script>
+        <script src="js/diff.js"></script>
+        <script src="js/main.js"></script>
+    </head>
+    <body>
+                <!--
+                -->
+        <div id="title-page">
+            <h1>This is the title of the thesis</h1>
+            <h2>Firstname Surname</h2>
+        </div>
+                    <div id="TOC">
+                <ul>
+                <li><a href="#bevezetés"><span class="toc-section-number">1</span> Bevezetés</a></li>
+                <li><a href="#flow-rendszer"><span class="toc-section-number">2</span> Flow rendszer</a></li>
+                <li><a href="#összefoglalás"><span class="toc-section-number">3</span> Összefoglalás</a></li>
+                <li><a href="#irodalomjegyzék">Irodalomjegyzék</a></li>
+                <li><a href="#köszönetnyilvánítás">Köszönetnyilvánítás</a></li>
+                </ul>
+            </div>
+                                
+
+
+<h1 id="bevezetés"><span class="header-section-number">1</span> Bevezetés</h1>
+<h1 id="flow-rendszer"><span class="header-section-number">2</span> Flow rendszer</h1>
+<p>Ezek az úgynevezett &quot;flow&quot;-k olyanok akárcsak egy-egy szabály. Olyan szabályok melyeknek van egy feltétele és egy hatása. Egy flow akkor lép életbe, ha a hozzátartozó feltétel a rendszer éppen aktuális állapota mellett teljesül. Ekkor a flow hatása végrehajtódik a rendszer által.</p>
+<p>A feltétel része lehet egyes eszközök állapotára vonatkozó megszorítások (pl.: 20°C-nál nagyobb a hőmérsékletet mutat a nappaliban elhelyezett hőmérő), a felhasználó vagy külső rendszer által indított kérés az alkalmazáshoz (pl.: gomb nyomás a kezelőfelületen vagy HTTP kérés egy bizonyos címen), egyéb rendszer állapot feltétel (pl.: időponthoz kötődő feltétel) és ezeknek logikai ÉS-sel összekötött kombinációja. A hatása egy flow-nak állhat eszközök állapotának módosításából, más rendszerhez történő kérésből és egyéb segéd akciókból (pl.: késleltetés). Ezeknek a &quot;hatás elemeknek&quot; egymás után történő végrehajtása adja az adott flow hatását.</p>
+<p>A rendszer célja az, hogy a fenti flow-k segítségével a felhasználó szabályokat/feladatokat tud leírni, amelyeket a rendszer majd végrehajt. Így tehát lehetséges bizonyos házkörüli dolgok automatizálása.</p>
+<p>Pár példa a rendszer használatára:</p>
+<ul>
+<li>ha adott szobában nincs érzékelt mozgás, akkor lekapcsolódik a villany</li>
+<li>ha több hőmérő is alacsony értéket mutat, akkor automatikusan fentebb megy a fűtés</li>
+<li>ha egy virág földje kiszáradna, akkor víz engedődik a virág alatt</li>
+<li>ha reggeli időpont van, akkor beindul a kávéfőző</li>
+<li>ha a levegő szén-monoxid tartalma átlép egy határt, akkor elindul egy jelző berendezés</li>
+<li>ha besötétedik és van mozgás, akkor a sötétítok lengednek és felkapcsol egy villany</li>
+</ul>
+<h1 id="összefoglalás"><span class="header-section-number">3</span> Összefoglalás</h1>
+
+<!--
+Do not edit this page.
+
+References are automatically generated from the BibTex file (References.bib)
+
+...which you should create using your reference manager.
+-->
+<h1 id="irodalomjegyzék" class="unnumbered">Irodalomjegyzék</h1>
+<h1 id="köszönetnyilvánítás" class="unnumbered">Köszönetnyilvánítás</h1>
+            </body>
+</html>
+

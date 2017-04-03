@@ -20,6 +20,7 @@ szabályokat/feladatokat tud leírni, amelyeket a rendszer majd végrehajt.
 Így tehát lehetséges bizonyos házkörüli dolgok automatizálása.
 
 Pár példa a rendszer használatára:
+
 * ha adott szobában nincs érzékelt mozgás, akkor lekapcsolódik a villany
 * ha több hőmérő is alacsony értéket mutat, akkor automatikusan fentebb megy a fűtés
 * ha egy virág földje kiszáradna, akkor víz engedődik a virág alatt

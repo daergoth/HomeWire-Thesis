@@ -154,7 +154,9 @@
                     <div id="TOC">
                 <ul>
                 <li><a href="#bevezetés"><span class="toc-section-number">1</span> Bevezetés</a></li>
-                <li><a href="#flow-rendszer"><span class="toc-section-number">2</span> Flow rendszer</a></li>
+                <li><a href="#rendszer-áttekintés"><span class="toc-section-number">2</span> Rendszer áttekintés</a><ul>
+                <li><a href="#flow-rendszer"><span class="toc-section-number">2.1</span> Flow rendszer</a></li>
+                </ul></li>
                 <li><a href="#összefoglalás"><span class="toc-section-number">3</span> Összefoglalás</a></li>
                 <li><a href="#irodalomjegyzék">Irodalomjegyzék</a></li>
                 <li><a href="#köszönetnyilvánítás">Köszönetnyilvánítás</a></li>
@@ -164,7 +166,8 @@
 
 
 <h1 id="bevezetés"><span class="header-section-number">1</span> Bevezetés</h1>
-<h1 id="flow-rendszer"><span class="header-section-number">2</span> Flow rendszer</h1>
+<h1 id="rendszer-áttekintés"><span class="header-section-number">2</span> Rendszer áttekintés</h1>
+<h2 id="flow-rendszer"><span class="header-section-number">2.1</span> Flow rendszer</h2>
 <p>Ezek az úgynevezett &quot;flow&quot;-k olyanok akárcsak egy-egy szabály. Olyan szabályok melyeknek van egy feltétele és egy hatása. Egy flow akkor lép életbe, ha a hozzátartozó feltétel a rendszer éppen aktuális állapota mellett teljesül. Ekkor a flow hatása végrehajtódik a rendszer által.</p>
 <p>A feltétel része lehet egyes eszközök állapotára vonatkozó megszorítások (pl.: 20°C-nál nagyobb a hőmérsékletet mutat a nappaliban elhelyezett hőmérő), a felhasználó vagy külső rendszer által indított kérés az alkalmazáshoz (pl.: gomb nyomás a kezelőfelületen vagy HTTP kérés egy bizonyos címen), egyéb rendszer állapot feltétel (pl.: időponthoz kötődő feltétel) és ezeknek logikai ÉS-sel összekötött kombinációja. A hatása egy flow-nak állhat eszközök állapotának módosításából, más rendszerhez történő kérésből és egyéb segéd akciókból (pl.: késleltetés). Ezeknek a &quot;hatás elemeknek&quot; egymás után történő végrehajtása adja az adott flow hatását.</p>
 <p>A rendszer célja az, hogy a fenti flow-k segítségével a felhasználó szabályokat/feladatokat tud leírni, amelyeket a rendszer majd végrehajt. Így tehát lehetséges bizonyos házkörüli dolgok automatizálása.</p>

@@ -6,15 +6,15 @@
 %	HEADING SECTIONS
 %----------------------------------------------------------------------------------------
 
-\textsc{\LARGE Debreceni Egyetem}\\[0.5cm]
+\textsc{\LARGE Debreceni Egyetem}\\[1cm]
 \textsc{\Large Informatikai Kar}\\[0.5cm]
-\textsc{\large Információ Technológia Tanszék}\\[3.5cm]
+\textsc{\large Információ Technológia Tanszék}\\[5cm]
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 
-{\Huge \bfseries Otthon automatizáció Java-ban}\\[10cm]
+{\Huge \bfseries Otthon automatizáció Java-ban}\\[9cm]
 
 %----------------------------------------------------------------------------------------
 %	AUTHOR SECTION
@@ -34,7 +34,7 @@ Vágner Anikó Szilvia \\
 Lakatos István \\
 \normalsize programtervező informatikus            
 \end{flushright}
-\end{minipage}\\[4cm]
+\end{minipage}\\[3cm]
 
 %----------------------------------------------------------------------------------------
 %	DATE SECTION

@@ -1,4 +1,6 @@
-# Flow rendszer
+# Rendszer áttekintés
+
+## Flow rendszer
 Ezek az úgynevezett "flow"-k olyanok akárcsak egy-egy szabály. Olyan szabályok
 melyeknek van egy feltétele és egy hatása. Egy flow akkor lép életbe,
 ha a hozzátartozó feltétel a rendszer éppen aktuális állapota mellett teljesül.

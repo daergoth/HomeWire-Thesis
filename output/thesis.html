@@ -153,30 +153,61 @@
         </div>
                     <div id="TOC">
                 <ul>
+                <li><a href="#köszönetnyilvánítás">Köszönetnyilvánítás</a></li>
                 <li><a href="#bevezetés"><span class="toc-section-number">1</span> Bevezetés</a><ul>
                 <li><a href="#témaválasztás"><span class="toc-section-number">1.1</span> Témaválasztás</a></li>
                 <li><a href="#célkitűzés"><span class="toc-section-number">1.2</span> Célkitűzés</a></li>
                 </ul></li>
                 <li><a href="#rendszer-áttekintés"><span class="toc-section-number">2</span> Rendszer áttekintés</a><ul>
-                <li><a href="#flow-rendszer"><span class="toc-section-number">2.1</span> Flow rendszer</a></li>
+                <li><a href="#eszközök"><span class="toc-section-number">2.1</span> Eszközök</a></li>
+                <li><a href="#hálózati-réteg"><span class="toc-section-number">2.2</span> Hálózati réteg</a></li>
+                <li><a href="#központi-szerver"><span class="toc-section-number">2.3</span> Központi szerver</a></li>
                 </ul></li>
-                <li><a href="#összefoglalás"><span class="toc-section-number">3</span> Összefoglalás</a></li>
+                <li><a href="#hardver"><span class="toc-section-number">3</span> Hardver</a></li>
+                <li><a href="#hálózati-réteg-1"><span class="toc-section-number">4</span> Hálózati réteg</a></li>
+                <li><a href="#központi-rendszer"><span class="toc-section-number">5</span> Központi rendszer</a><ul>
+                <li><a href="#flow-rendszer"><span class="toc-section-number">5.1</span> Flow rendszer</a></li>
+                </ul></li>
+                <li><a href="#összefoglalás"><span class="toc-section-number">6</span> Összefoglalás</a></li>
                 <li><a href="#irodalomjegyzék">Irodalomjegyzék</a></li>
-                <li><a href="#köszönetnyilvánítás">Köszönetnyilvánítás</a></li>
                 </ul>
             </div>
                                 
+
+<p> </p>
+<h1 id="köszönetnyilvánítás" class="unnumbered">Köszönetnyilvánítás</h1>
+
 
 
 <h1 id="bevezetés"><span class="header-section-number">1</span> Bevezetés</h1>
 <h2 id="témaválasztás"><span class="header-section-number">1.1</span> Témaválasztás</h2>
 <p>Dolgozatom témaválasztása nem volt nehéz feladat számomra, mivel korábbi érdeklődés alapján már találkoztam az otthon &quot;okosítás&quot; vagy automatizálás témakörével. Rendkívül le tudtak foglalni a hardverközeli, mikrokontrollereket felhasználó projektjeim és azoknak kapcsán kezdtem el például különböző környezeti jellemző mérőeszközöket készíteni szabadidőmben. Onnantól kezdve pedig rövid út vezet házak utólagos felokosításának ötletéhez.</p>
-<p>Annak a háttérében, hogy mindezt a Java nyelv segítségével tervezem megvalósítani, szintén egyszerű okok állnak. Tanulmányaim során legtöbbször a Java nyelvvel találkozhattam és így szerezhettem jelentősebb belelátást a működésébe és használatába. Így mivel szinte egyedül a Java nyelvhez kapcsolódóan van megfelelő tudásom ahhoz, hogy szakdolgozathoz illő nagyságú munkát készítsek azt választottam alapnak. Másik fontos oka választásomnak, hogy szakmai gyakorlatom alatt is Java nyelvet használtam és így tudtam ismereteket szerezni több olyan keretrendszerről, amiket használni is szeretnék tapasztalatszerzés céljából, illetve pontosan beleilletek a bennem kialakuló képbe, amit arról a rendszerről alkottam, mely ennek a dolgozatnak az alapját alkotja.</p>
+<p>Annak a háttérében, hogy mindezt a Java nyelv segítségével tervezem megvalósítani, szintén egyszerű okok állnak. Tanulmányaim során legtöbbször a Java nyelvvel találkozhattam és így szerezhettem jelentősebb belelátást a működésébe és használatába. Így mivel szinte egyedül a Java nyelvhez kapcsolódóan van megfelelő tudásom ahhoz, hogy szakdolgozathoz illő nagyságú munkát készítsek, azt választottam alapnak. Másik fontos oka választásomnak, hogy szakmai gyakorlatom alatt is Java nyelvet használtam és így tudtam ismereteket szerezni több olyan keretrendszerről, amiket használni is szeretnék tapasztalatszerzés céljából, illetve pontosan beleilletek a bennem kialakuló képbe, amit arról a rendszerről alkottam, mely ennek a dolgozatnak az alapját adja.</p>
 <h2 id="célkitűzés"><span class="header-section-number">1.2</span> Célkitűzés</h2>
-<p>A dolgozatom során a fő cél egy olyan rendszer elkészítése, mely képes apró eszközök és egy központi egység segítségével automatizált feladatokat elvégezni. Ennek eléréséhez meg kellett tervezni az apró eszközök hardveres felépítését, fejleszteni egy központi szoftvert, ami képes az eszközöktől érkező adatok feldolgozására és azok alapján a felhasználó által megadott szabályok mentén feladatokat végrehajtására, illetve felmerült több érdekes kérdés is, melyekre kutatásaim során találtam válaszokat és próbáltam ezen válaszokat felhasználni a fejlesztés során.</p>
+<p>A dolgozatom során a fő cél egy olyan rendszer elkészítése, mely képes apró eszközök és egy központi egység segítségével automatizált feladatokat elvégezni. Ennek eléréséhez meg kellett tervezni az apró eszközök hardveres felépítését, fejleszteni egy központi szoftvert, ami képes az eszközöktől érkező adatok feldolgozására és azok alapján a felhasználó által megadott szabályok mentén feladatokat végrehajtására. Felmerült több érdekes kérdés is, melyekre kutatásaim során találtam válaszokat és próbáltam ezen válaszokat felhasználni a fejlesztés során.</p>
 <p>A fejlesztés alatt végig úgy hoztam a döntéseket, hogy egy egyszerű háztartásban kell működjön a rendszer. Tehát nem volt célom az, hogy nagy számú felhasználók használják egyszerre vagy éppen több száz eszköz kapcsolódjon a központi rendszerhez. Részletesebben és feladathoz kapcsolódóan is meg fogom fogalmazni az elvárásokat, célokat a rendszerrel szemben, de ezt természetesen a későbbi fejezetekben teszem majd.</p>
 <h1 id="rendszer-áttekintés"><span class="header-section-number">2</span> Rendszer áttekintés</h1>
-<h2 id="flow-rendszer"><span class="header-section-number">2.1</span> Flow rendszer</h2>
+<p>Ebben a fejezetben egy kezdeti képet szeretnék adni a teljes rendszer alapvető felépítéséről, illetve arról, hogy az egyes rendszer részek felé milyen elvárások vannak. Minden részt kifejtek ebben a fejezetben, de csak annyira, hogy átláthatóvá tegye a dolgozat többi részét. Későbbi fejezetekben viszont majd mélyrehatolóbban nézzük meg a rendszer alapjait.</p>
+<p>Alapvetően három részre bontható a rendszer:</p>
+<ul>
+<li>Eszközök, amely magába foglalja az összes mérőeszközt és egyéb kisebb beágyazott rendszereket. Ezek egyszerű mikrokontrollereket használó rendszerek, amiknek annyi szerepe van, hogy vagy adatot szolgáltatnak, vagy valamilyen funkcionalitást végeznek el.</li>
+<li>Hálózati réteg, amely egy egyszerű közvetítőként funkcionál a központi szerver és az eszközök között. Lényegében átalakítja az üzeneteket a két rész között a megfelelő formátumra.</li>
+<li>Központi szerver, amely végzi az adatok feldolgozását és biztosít egy felületet a felhasználó számára, hogy láthassa a rendszer állapotát vagy aktuális adatokat.</li>
+</ul>
+
+
+<h2 id="eszközök"><span class="header-section-number">2.1</span> Eszközök</h2>
+<p>Mint már említve volt, ide tartoznak azok a hardverközeli rendszerek, amik vagy adatgyűjtő szerepet töltenek be, vagy valamilyen funkcionalitást képesek végrehajtani. Lehet egy ilyen eszköz például egy hőmérő, légnyomásmérő, földnedvességmérő vagy éppen egy relé.</p>
+<p>Közös bennük, hogy mindegyikben van egy mikrokontroller és egy kommunikációért felelős modul. E mellett mindegyik eszköz tartalmaz még egy specifikus modult is, ami meghatározza, hogy mit is csinál az adott eszköz (pl.: hőmérő esetén egy hőmérséklet- és páratartalom érzékelő).</p>
+<p>A mikrokontroller vezérli az adatgyűjtés és küldés folyamatát. Az idő nagy részében alvó állapotban van energiatakarékossági szempontok miatt, viszont fix időközönként felébred. Mikor felébred</p>
+<h2 id="hálózati-réteg"><span class="header-section-number">2.2</span> Hálózati réteg</h2>
+<p>A hálózati réteg léte elsőnek nem látszik logikusnak. Feleslegesnek tűnhet egy plusz szereplőt bevonni a központi szerver és az eszközök közé. A probléma, ami mégis megköveteli azt, hogy legyen egy köztes réteg, az az hogy a központi szerver nem tud elég hardverközeli lenni.</p>
+<h2 id="központi-szerver"><span class="header-section-number">2.3</span> Központi szerver</h2>
+<p>A legnagyobb funkcionalitást természetesen a központi szerver végzi, hiszen ott lesznek feldolgozva az eszközöktől érkező állapotjelentések és az küldhet állapot beállítási parancsokat az egyes eszközöknek.</p>
+<h1 id="hardver"><span class="header-section-number">3</span> Hardver</h1>
+<h1 id="hálózati-réteg-1"><span class="header-section-number">4</span> Hálózati réteg</h1>
+<h1 id="központi-rendszer"><span class="header-section-number">5</span> Központi rendszer</h1>
+<h2 id="flow-rendszer"><span class="header-section-number">5.1</span> Flow rendszer</h2>
 <p>Ezek az úgynevezett &quot;flow&quot;-k olyanok akárcsak egy-egy szabály. Olyan szabályok melyeknek van egy feltétele és egy hatása. Egy flow akkor lép életbe, ha a hozzátartozó feltétel a rendszer éppen aktuális állapota mellett teljesül. Ekkor a flow hatása végrehajtódik a rendszer által.</p>
 <p>A feltétel része lehet egyes eszközök állapotára vonatkozó megszorítások (pl.: 20°C-nál nagyobb a hőmérsékletet mutat a nappaliban elhelyezett hőmérő), a felhasználó vagy külső rendszer által indított kérés az alkalmazáshoz (pl.: gomb nyomás a kezelőfelületen vagy HTTP kérés egy bizonyos címen), egyéb rendszer állapot feltétel (pl.: időponthoz kötődő feltétel) és ezeknek logikai ÉS-sel összekötött kombinációja. A hatása egy flow-nak állhat eszközök állapotának módosításából, más rendszerhez történő kérésből és egyéb segéd akciókból (pl.: késleltetés). Ezeknek a &quot;hatás elemeknek&quot; egymás után történő végrehajtása adja az adott flow hatását.</p>
 <p>A rendszer célja az, hogy a fenti flow-k segítségével a felhasználó szabályokat/feladatokat tud leírni, amelyeket a rendszer majd végrehajt. Így tehát lehetséges bizonyos házkörüli dolgok automatizálása.</p>
@@ -187,9 +218,9 @@
 <li>ha egy virág földje kiszáradna, akkor víz engedődik a virág alatt</li>
 <li>ha reggeli időpont van, akkor beindul a kávéfőző</li>
 <li>ha a levegő szén-monoxid tartalma átlép egy határt, akkor elindul egy jelző berendezés</li>
-<li>ha besötétedik és van mozgás, akkor a sötétítok lengednek és felkapcsol egy villany</li>
+<li>ha besötétedik és van mozgás, akkor a sötétítők leengednek és felkapcsol egy villany</li>
 </ul>
-<h1 id="összefoglalás"><span class="header-section-number">3</span> Összefoglalás</h1>
+<h1 id="összefoglalás"><span class="header-section-number">6</span> Összefoglalás</h1>
 
 <!--
 Do not edit this page.
@@ -199,7 +230,6 @@ References are automatically generated from the BibTex file (References.bib)
 ...which you should create using your reference manager.
 -->
 <h1 id="irodalomjegyzék" class="unnumbered">Irodalomjegyzék</h1>
-<h1 id="köszönetnyilvánítás" class="unnumbered">Köszönetnyilvánítás</h1>
             </body>
 </html>
 

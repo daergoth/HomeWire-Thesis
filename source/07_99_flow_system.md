@@ -1,5 +1,3 @@
-# Rendszer áttekintés
-
 ## Flow rendszer
 Ezek az úgynevezett "flow"-k olyanok akárcsak egy-egy szabály. Olyan szabályok
 melyeknek van egy feltétele és egy hatása. Egy flow akkor lép életbe,
@@ -28,4 +26,4 @@ Pár példa a rendszer használatára:
 * ha egy virág földje kiszáradna, akkor víz engedődik a virág alatt
 * ha reggeli időpont van, akkor beindul a kávéfőző
 * ha a levegő szén-monoxid tartalma átlép egy határt, akkor elindul egy jelző berendezés
-* ha besötétedik és van mozgás, akkor a sötétítok lengednek és felkapcsol egy villany
+* ha besötétedik és van mozgás, akkor a sötétítők leengednek és felkapcsol egy villany

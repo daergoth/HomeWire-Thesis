@@ -45,3 +45,7 @@ Lakatos István \\
 \vfill % Fill the rest of the page with whitespace
 
 \end{titlepage}
+
+\newpage
+\thispagestyle{empty}
+\mbox{}

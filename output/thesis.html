@@ -276,6 +276,11 @@
 <p>A kezelőpanel szolgáltatja a felhasználó számára a valós idejű adatokat. Itt jelennek meg a beérkező állapotjelentések az eszközöktől legelőször, illetve aktorok esetében itt lesz lehetőségünk kézzel átállítani az eszköz állapotát, vagyis állapot beállító parancsokat küldeni.</p>
 <p>Lehetővé válik így, hogy a felhasználó akár a munkahelyéről is megnézhesse hogy áll az otthona, esetleg nem hagyta-e nyitva az ajtót reggel. Ez a pár másopercenként frissülő kezelő felület minden eszköztípushoz külön mini megjelenítő modulokat rendel, aminek köszönhetően akár pár pillanat alatt megtalálhatjuk a számunkra fontos információkat.</p>
 <h1 id="eszközök-1"><span class="header-section-number">3</span> Eszközök</h1>
+<p>Az előző fejezetben megtudtuk, mit csinálnak az eszközeink. Szintén megismertük, hogy mit is jelent a <em>szenzor</em> és az <em>aktor</em> fogalma, illetve, hogy miben különböznek. Ebben a fejezetben ecsetlve lesz, milyen hardverek lettek kiválasztva az eszközök összeállítására, illetve meg lesznek indokolva ezen választások is.</p>
+<p>Ugye tudjuk szintén az előző fejezetből, hogy minden eszköz &quot;agya&quot; egy mikrokontroller. Ez a kicsi és alacsony teljesítményű processzor felelős az adatgyűjtés folyamatának koordinálásáért. Mivel nincs kiterjedt tudásom a mikrokontrollerek programozásának terén, számomra a legkönnyebb volt az <strong>Arduino</strong> fejlesztői környezetek mellett letenni a voksom.</p>
+<p>Másik fontos alkotóelem, a vezetéknélküli modul. Ebben a választásban már természetesen megszorítás volt, hogy a kiválasztott modul kompatibilis legyen Arduino-kal. Habár nem volt egyszerű döntés, egy <strong>nRF24L01+</strong> adó-vevő integrált áramkört felhasználó modult választottam.</p>
+<p>Ahogy korábban említettem harmadik része az eszközeinknek változó, még pedig az határozza meg, hogy mit szeretnénk elérni az adott szenzorral vagy aktorral. A fejlesztés elején kiválasztottam pár eszköztípust, amit el szerettem volna készíteni és támogatni a kész rendszerben. A teljesség igénye nélkül be fogok mutatni pár szenzor és aktor modult, mint például a hőmérséklet mérésére szolgáló <strong>DHT22</strong> hő- és légnedvesség mérő szenzor modult.</p>
+<p>Mindezek után kitérek arra, hogy a fent említett hardvereket hogyan kell összekötni, hogy egy működő eszközt kaphassunk. Szerencsémre az összerakási folyamat nem igényelt jelentős villamosmérnöki tudást, elég volt néhány kábellel összekötni a megfelelő ki- és bemeneteket.</p>
 <h2 id="hardver-választás"><span class="header-section-number">3.1</span> Hardver választás</h2>
 <h3 id="arduino"><span class="header-section-number">3.1.1</span> Arduino</h3>
 <h3 id="vezetéknélküli-modulok"><span class="header-section-number">3.1.2</span> Vezetéknélküli modulok</h3>
@@ -283,6 +288,14 @@
 <h3 id="eszköz-specifikus-hardver"><span class="header-section-number">3.1.3</span> Eszköz specifikus hardver</h3>
 <h2 id="felépítés"><span class="header-section-number">3.2</span> Felépítés</h2>
 <h3 id="példák-kész-eszközökre"><span class="header-section-number">3.2.1</span> Példák kész eszközökre</h3>
+<ul>
+<li>Hő- és páratartalommérő szenzor
+</li>
+<li>Mozgásérzékelő szenzor
+</li>
+<li>Elektromos relé aktor
+</li>
+</ul>
 <h2 id="szoftver-működés"><span class="header-section-number">3.3</span> Szoftver működés</h2>
 <h3 id="alvó-mód"><span class="header-section-number">3.3.1</span> Alvó mód</h3>
 <h1 id="hálózati-réteg-1"><span class="header-section-number">4</span> Hálózati réteg</h1>

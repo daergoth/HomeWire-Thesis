@@ -1,4 +1,5 @@
 ## Flow rendszer
+\label{ch:flow_system}
 Ezek az úgynevezett "flow"-k olyanok akárcsak egy-egy szabály. Olyan szabályok
 melyeknek van egy feltétele és egy hatása. Egy flow akkor lép életbe,
 ha a hozzátartozó feltétel a rendszer éppen aktuális állapota mellett teljesül.
@@ -27,3 +28,5 @@ Pár példa a rendszer használatára:
 * ha reggeli időpont van, akkor beindul a kávéfőző
 * ha a levegő szén-monoxid tartalma átlép egy határt, akkor elindul egy jelző berendezés
 * ha besötétedik és van mozgás, akkor a sötétítők leengednek és felkapcsol egy villany
+
+### Flow kiértékelés

@@ -1,0 +1,3 @@
+## Szoftver működés
+
+### Alvó mód

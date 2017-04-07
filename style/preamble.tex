@@ -27,12 +27,12 @@
 %  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
 
 \usepackage{indentfirst}
+
 \usepackage{t1enc}
 \usepackage[utf8]{inputenc}
 \usepackage[magyar]{babel}
 
 \usepackage{tikz}
-
 
 % % Fonts and typesetting
 \setmainfont[Scale=1.1]{Times New Roman}
@@ -81,7 +81,10 @@
 % Set margins
 \usepackage[top=30mm,bottom=30mm,left=30mm,right=20mm]{geometry}
 \setlength\parindent{0.4in} % indent at start of paragraphs (set to 0.3?)
-\setlength{\parskip}{9pt}
+\setlength{\parskip}{5pt}
+
+\usepackage{enumitem}
+\setlist[itemize]{topsep=0pt}
 
 % Add space between pararaphs
 % http://texblog.org/2012/11/07/correctly-typesetting-paragraphs-in-latex/

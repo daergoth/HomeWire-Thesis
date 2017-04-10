@@ -10,7 +10,7 @@ kiterjedt tudásom a mikrokontrollerek programozásának terén, számomra a leg
 **Arduino** fejlesztői környezetek mellett letenni a voksom.
 
 Másik fontos alkotóelem, a vezetéknélküli modul. Ebben a választásban már természetesen megszorítás
-volt, hogy a kiválasztott modul kompatibilis legyen Arduino-kal. Habár nem volt egyszerű döntés,
+volt, hogy a kiválasztott modul kompatibilis legyen Arduino-kkal. Habár nem volt egyszerű döntés,
 egy **nRF24L01+** adó-vevő integrált áramkört felhasználó modult választottam.
 
 Ahogy korábban említettem harmadik része az eszközeinknek változó, még pedig az határozza meg, hogy

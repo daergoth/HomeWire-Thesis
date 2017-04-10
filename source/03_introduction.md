@@ -1,6 +1,5 @@
 # Bevezetés
 
-## Témaválasztás
 Dolgozatom témaválasztása nem volt nehéz feladat számomra, mivel korábbi érdeklődés
 alapján már találkoztam az otthon "okosítás" vagy automatizálás témakörével.
 Rendkívül le tudtak foglalni a hardverközeli, mikrokontrollereket felhasználó
@@ -27,7 +26,6 @@ amiket használni is szeretnék tapasztalatszerzés céljából, illetve pontosa
 beleilletek a bennem kialakuló képbe, amit arról a rendszerről alkottam,
 mely ennek a dolgozatnak az alapját adja.  
 
-## Célkitűzés
 A dolgozatom során a fő cél egy olyan rendszer elkészítése, mely képes apró eszközök
 és egy központi egység segítségével automatizált feladatokat elvégezni.
 Ennek eléréséhez meg kellett tervezni az apró eszközök hardveres felépítését,

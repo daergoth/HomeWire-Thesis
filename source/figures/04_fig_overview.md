@@ -1,5 +1,4 @@
-\begin{figure}[!h]
-  \centering
+\begin{center}
   \begin{tikzpicture}[scale=0.9]
     \draw  (-8,0.5) rectangle (-4,-1.5);
     \draw  (0,3) rectangle (2,-4);
@@ -42,7 +41,6 @@
     \node at (4,-2) {Állapotjelentés};
     \node at (4,-3.5) {Állapot beállítás};
   \end{tikzpicture}
-  \caption{A rendszer felépítése, a rétegek és eszközök egymás közötti kommunikációja}
+  \captionof{figure}{A rendszer felépítése, a rétegek és eszközök egymás közötti kommunikációja}
   \label{fig:04_overview}
-\end{figure}
-\FloatBarrier
+\end{center}

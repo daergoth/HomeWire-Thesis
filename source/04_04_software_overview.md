@@ -37,7 +37,7 @@ elég könnyen adja magát az elvárás, hogy tudjunk statisztikákat nézni a m
 
 Ehhez viszont el kell tárolni minden adatot, hogy később is tudjunk valamit mutatni
 a felhasználónak. Az adatbázis-rendszer kiválasztásánál ez volt az egyik legnagyobb
-szempont. A választás a MongoDB-re jutott, viszont a döntés mögött álló érveket majd
+szempont. A választás a  **MongoDB**-re jutott, viszont a döntés mögött álló érveket majd
 a \ref{ch:database}. alfejezetben fogom ismertetni. Mindemellett ahhoz, hogy az a
 sok adat, amit elmentenénk ne foglaljon sok tárhelyet, nem külön mentődnek el, ahogy
 beérkeznek a szerverhez, hanem percenként átlagolva kerül az adatbázisba. Ezzel

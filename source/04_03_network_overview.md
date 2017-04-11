@@ -5,7 +5,7 @@ mégis megköveteli azt, hogy legyen egy köztes réteg, az egy eszközökhöz k
 döntésből fakad.   
 
 A hardveres tervezés alatt találkoztam több vezetéknélküli
-kommunikációs modullal is. Volt olyan, ami WiFi-t használ a kommunikációhoz, volt
+kommunikációs modullal is. Volt olyan, ami WiFi-t használ a kommunikációhoz, volt,
 ami csak simán rádiófrekvenciás modul volt. Bizonyos okok miatt, amit majd a \ref{ch:wireless_modul}.
 alfejezetben fogok leírni, a rádiófrekvenciás modulok mellett döntöttem. Így viszont
 szükség van egy központi eszközre, ami egy ugyanolyan kommunikációs modullal kell

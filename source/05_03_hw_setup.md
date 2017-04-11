@@ -1,6 +1,6 @@
 ## Felépítés
 Így, hogy minden alkatrészt kiválasztottunk a következő feladat, hogy össze is rakjuk az eszközeinket.
-Az első és legfontosabb lépés, hogy áramot kapjon a fő alkatrészünk, az Arduino. Magán az Arduino-n
+Az első és legfontosabb lépés, hogy áramot kapjon a fő alkatrészünk, az Arduino. Magán az Arduinon
 elhelyezett feszültség szabályzónak köszönhetően, képesek vagyunk akár egy 9V-os elemmel is megoldani
 az áramellátást. A példa kedvéért most maradjunk ennél a megoldásnál annak okán, hogy ne kelljen
 fölösleges feszültség átalakításokkal foglalkozni. Valójában úgy terveztem viszont az eszközt, hogy
@@ -19,7 +19,7 @@ tudunk adatot küldeni más nRF24L01+-t használó eszközöknek.
 Hátra van még az eszköz specifikus rész bekötése. Természetesen ez eszközről eszköre változik, viszont
 mivel szükség lesz az Arduino megszakítás rendszerére, az egyetlen megszorítás, hogy olyan bemenetre
 kell bekötni a specifikus eszközt, ahol az Arduino támogatja a megszakításokat. A megszakításokat később,
-a \ref{ch:hw_firmware_operation}. alfejezetben fogom ismertetni.  
+a \ref{ch:hw_interrupts}. alfejezetben fogom ismertetni.  
 
 ### Példák kész eszközökre
 Csak felsorolásszerűen bemutatnám képekben annak a pár eszköznek a felépítését, amelyeket korábban

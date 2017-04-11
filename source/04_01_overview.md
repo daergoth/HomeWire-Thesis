@@ -3,7 +3,7 @@
 Ebben a fejezetben egy kezdeti képet szeretnék adni a teljes rendszer alapvető
 felépítéséről, illetve arról, hogy az egyes rendszer részek felé milyen elvárások
 vannak. Minden részt kifejtek ebben a fejezetben, de csak annyira, hogy átláthatóvá
-tegye a dolgozat többi részét. Későbbi fejezetekben viszont majd mélyrehatolóbban
+tegye a dolgozat többi részét. Későbbi fejezetekben viszont majd mélyrehatóbban
 nézzük meg a rendszer alapjait.
 
 \noindent

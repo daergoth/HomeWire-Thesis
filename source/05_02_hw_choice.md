@@ -54,7 +54,91 @@ elemet, amit a `avr-gcc` fordítóprogram támogat.
 
 ### Vezetéknélküli modulok
 \label{ch:wireless_modul}
+A vezeték nélküli modulok közti jó választás fontos pontja a rendszernek és nagy hatással van később
+a működés menetére vagy stabilitására. Négy nagyobb szempont szerint vizsgáltam a jelölteket: ár,
+áramfogyasztás, hatótáv, sebesség. Ugye a célunk az, hogy minél olcsóbban érjünk el nagy hatótávokat.
+A sebesség szerencsére nem fontos számunkra, hiszen alkalmanként küldünk csak egy pár bájtnyi üzenetet.
+Annál inkább lényegesebb az áramfogyasztás, mert természetesen ezek az eszközök elemekről működnek majd.
+Ezért korlátozó tényező az áramforrás kapacitása és a teljesítménye is, vagyis, hogy mekkora áramerősségre
+képes. Háromféle modult vettem számításba és hasonlítottam őket össze egymással a végleges döntés meghozásához.
 
+Elsőként az *nRF24L01+* alapú modulokat mutatom be. Az *nRF24L01+* modulok olcsónak tekinthetőek, hiszen
+akár 500 forint körül megvásárolhatunk egyből 2 darabot [^nrf24_ebay_price]. A modul nem csak olcsó,
+hanem az áramfogyasztása is kiváló. Mind a üzenet fogadás és küldés közbeni nagyjából 12 milliamperes
+fogyasztás kivételesen jó. Összehasonlításnak, ha önmagában az *nRF24L01+* modult kellene működtetni egy
+gombelemről, akkor 10-15 órás folyamatos üzenet küldésre vagy fogadásra lennénk képesek és ha ezt úgy
+úgy nézzük, hogy egyszerre csak a másodperc töredékéig kell aktívan küldeni vagy fogadni nagy időközönként,
+akkor láthatjuk tényleg mennyire is kevés az *nRF24L01+* modul fogyasztása. Sebességet tekintve közép
+kategóriába sorolható, ugyanis a modul képes a maximum 2 Mb/s adatátviteli sebességre. A 2 Mb/s nem
+mondható túl nagynak, ugye sebességre nincs is nagy szükségünk. Ha viszont lentebb vesszük a sebességét
+az moduloknak 250 kb/s-ra, akkor még hatótávban is nyerhetünk pár métert. Minden közül a legfontosabb
+tulajdonsága egy vezeték nélküli modulnak az, hogy mennyire messze ér el az adatátvitel. Ezen szempontból
+sincs szégyenkeznivalója az *nRF24L01+* moduloknak. Természetesen a hatótávra rendkívül nagy hatással
+vannak a környezeti tényezők, például mennyi akadály van az adó és vevőt között. Mivel az *nRF24L01+*
+2.4 GHz-es vivőfrekvenciával működik a modulok a beltéri hatótáv többszörösét tudják elérni egy szabadtéren.
+De szintén hátráltató tényező a WiFi hálózatok jelenléte, hiszen az is a 2.4 GHz-es frekvenciákon működik.
+Mindezek ellenére a modul képes akár 100 méteren keresztül is az adatátvitelre és ha azt tekintjük,
+hogy a rendszer célja, hogy egy háztartásban működjön, akkor még a 25 méteres hatótáv is elég lehet
+számunkra.
+\begin{center}
+  \includegraphics[width=0.3\textwidth]{source/figures/05_nrf24.jpg}
+  \captionof{figure}{nRF24L01+ alapú vezeték nélküli modul}
+\end{center}
+
+[^nrf24_ebay_price]:
+nRF24L01+ vezeték nélküli modul eBay ára: <https://tinyurl.com/eBayNRF24> (2017. április 18.)
+
+A második modul az *ESP8266*, ami egy WiFi-n keresztül kommunikáló eszköz. Azzal, hogy WiFi-képes a modul
+az is lehetséges, hogy közvetlen az internetre csatlakozva küldjünk üzeneteket és ezáltal nem is feltétlen
+lenne szükség egy közvetítőre a szenzorok, az aktorok és a központi rendszer között. Ezzel a tulajdonsággal,
+viszont olyan hátrányok járnak, mint aránylag rövid hatótáv és rendkívül nagy áramfogyasztás. Maga az
+*ESP8266* is képes WiFi hozzáférési pontként funkcionálni és jó hatótávokat elérni (akár 100 méternél is többet),
+viszont mi úgy szeretnénk használni, mint egy routerhez kapcsolódó eszközt, ezért a router hatótávja
+korlátoz minket. Egy router hatótávja viszont általában tekintve nem a legfényesebb, van, hogy alig
+ér be egy-egy háztartást. Áramfogyasztást tekintve üzenetküldés alatt 100 milliamper körül fogyaszt,
+olykori 300-350 milliamperes csúcsokkal. Ezen csúcsok miatt elég nagy teljesítményű áramforrásokra lesz
+szükség a működtetéséhez, amik maguk is sok áramot fogyasztanak. Ráadásul a modul fogyasztása is nagyon magas,
+nem is nagyon lehetséges sokáig üzemeltetni, ha véges kapacitásokkal rendelkezünk. Az árat tekintve
+viszont jól áll az *ESP8266*, mert 2000 forintért [^esp8266_price] már hozzájuthatunk.
+\begin{center}
+  \includegraphics[width=0.3\textwidth]{source/figures/05_esp8266.jpg}
+  \captionof{figure}{ESP8266 WiFi vezeték nélküli modul}
+\end{center}
+
+[^esp8266_price]:
+ESP-01 WiFi modul külföldi webáruházi ára: <https://www.sparkfun.com/products/13678> (2017. április 18.)
+
+Hátramaradtak a *Zigbee* modulok. Sok féle Zigbee létezik, de én a Series 1, 1 mW-os eszközöket vettem
+figyelembe, mert a nagyobb fogyasztású társai az *ESP8266*-höz hasonlóan túl hamar lemerítené az
+áramforrásainkat. Hiába van jó hatótávja, mint az *nRF24L01+* moduloknak, még a legenergiatakarékosabb
+variáció is többet fogyaszt nála. Hivatalosan a *Zigbee* eszközök 50 milliampert fogyasztanak, ami
+3-szor vagy 4-szer több, mint az *nRF24L01+* fogyasztása. A sebessége a moduloknak elfogadható számunkra,
+250 kb/s-ra képesek, ami elég, ahogy arra már korábban kitértem. Utoljára hagytam a legnagyobb hátrányát a modulnak,
+ami nem más, mint az ára. Darabja a *Zigbee* eszközöknek 8000 forint [^zigbee_price] körül van, ami túlságosan megemeli
+egy-egy szenzor előállítási költségét. Egy *Zigbee* árából akár 30 *nRF24L01+* modult is vehetünk, ami
+elég abszurdul hangzik.
+\begin{center}
+  \includegraphics[width=0.3\textwidth]{source/figures/05_zigbee.jpg}
+  \captionof{figure}{Zigbee Series 1 1mW vezeték nélküli modul}
+\end{center}   
+
+[^zigbee_price]:
+Zigbee Series 1 1mW vezeték nélküli modul külföldi webáruházi ára: <https://www.sparkfun.com/products/8665> (2017. április 18.)
+
+Modulok     nRF24L01+         ESP8266       Zigbee
+----------  ---------------   ------------  ------------
+Sebesség    250 kb/s-2 Mb/s   1-5 Mb/s      250 kb/s
+Fogyasztás  ~ 12 mA           ~ 100 mA      50 mA
+Hatótáv     30-100 m          10-30 m       30-100 m
+Ár          ~ 250 Ft/db       ~ 2000 Ft/db  ~ 8000 Ft/db
+
+: Vezeték nélküli modulok összehasonlítása
+\label{wireless_module_table}
+
+A fejezet elején már említettem, hogy az *nRF24L01+* modulokat választottam, amiben főleg az ára és
+az áramfogyasztása játszott nagy szerepet. Mind a három eszköz megfelelt a sebesség és hatótáv
+feltételeimnek, így könnyen látható a \ref{wireless_module_table}. táblázatból, hogy a maradék két szempontot nézve egyértelműen az
+*nRF24L01+* eszközök a nyerőek.
 
 ### Eszköz specifikus hardver
 Közös megszorítás volt természetesen minden eszköz specifikus modul kiválasztásánál, hogy könnyedén

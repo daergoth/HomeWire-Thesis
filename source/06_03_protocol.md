@@ -38,6 +38,7 @@ adatcsere formátum. A JSON, azért tűnt mégis jobbnak számomra, mert könnye
   targetState: [kívánt állapot]
 }
 ```
+
 ### Kommunkáció az eszközökkel
 Több különbség is észrevehető a központi szerver üzeneteihez képest. Elsőnek azt láthatjuk meg, hogy
 sehol nincs `id` mező, de nincs is rá szükség, mivel az üzenetet csak `id` csomópont azonosítóval

@@ -48,8 +48,8 @@ programkönyvtárnak köszönhető. A különbség a másik oldalhoz képest ann
 az érkező üzenetek beolvasását megbonyolítja az üzenetek cimkézése. Már említettem, hogy ezeket a címkéket
 arra használjuk, hogy az eszközök kategóriáját (szenzor vagy aktor) meg tudjuk mondani. A beolvasás
 azzal kell kezdődjön, hogy megnézzük, milyen címkével rendelkezik az üzenet. Ez úgy történik, hogy az
-`RF24Network::peek()` [^rf24_peek] függvény egy `RF24NetworkHeader` objektumba belerakja az üzenet fejléc részét.
+`RF24Network::peek()` függvény egy `RF24NetworkHeader` objektumba belerakja az üzenet fejléc részét.
 A fejléc rész olyan információkat tartalmaz, mint a küldő és a címzett hálózati címe, egy üzenet azonosító
-és az üzenet címke. Ezután a `RF24Network::read()` [^rf24_read] függvény a fejléc segítségével az teljes üzenetet
+és az üzenet címke. Ezután a `RF24Network::read()` függvény a fejléc segítségével az teljes üzenetet
 belerakja egy általunk megadott változóba. Az olvasás befejezése után minden a TCP kapcsolat
-kezeléséhez hasonlóan zajlik, csak az üzenetküldéshez a `RF24Mesh::write()` [^rf24_write] függvényt kell használni. [@RF24NetworkDocumentation; @RF24MeshDocumentation]
+kezeléséhez hasonlóan zajlik, csak az üzenetküldéshez a `RF24Mesh::write()` függvényt kell használni. [@RF24NetworkDocumentation; @RF24MeshDocumentation]

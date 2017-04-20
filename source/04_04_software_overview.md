@@ -1,11 +1,13 @@
 ## Központi szerver
+\label{ch:software_overview}
 A legnagyobb funkcionalitást természetesen a központi szerver végzi, hiszen ott
 lesznek feldolgozva az eszközöktől érkező állapotjelentések és a szerver küldhet
 állapot beállítási parancsokat is.
 
 Mint említve volt már a központi szerver TCP kapcsolaton keresztül kommunikál a
 hálózati réteggel. Az onnan érkező üzeneteket a rendszer például a megfelelő
-formában elmenti az adatbázisban vagy az üzenet hatására elindulhat
+formában elmenti az adatbázisban vagy az üzenet hatására elindulhatnak bizonyos
+döntéshozási folyamatok is.
 
 \noindent  
 A központi szervert is tovább tudjuk bontani több darabra funkcionalitása alapján:
@@ -41,7 +43,7 @@ szempont. A választás a  *MongoDB*-re jutott, viszont a döntés mögött áll
 a \ref{ch:database}. alfejezetben fogom ismertetni. Mindemellett ahhoz, hogy az a
 sok adat, amit elmentenénk ne foglaljon sok tárhelyet, nem külön mentődnek el, ahogy
 beérkeznek a szerverhez, hanem percenként átlagolva kerül az adatbázisba. Ezzel
-igaz, hogy egy kicsi pontosságot vesztünk, mikor visszanézzük a statisztikákat,
+igaz, hogy egy kicsi pontosságot vesztünk mikor visszanézzük a statisztikákat,
 viszont, ha jobban belegondolunk nincs is szükségünk arra, hogy például 10 másodpercenkénti
 részekre lebontva lássuk a múlt heti hőmérsékletet. Ami azt illeti még a percenkénti
 lebontás is túl aprónak tűnik bizonyos helyzetekben, de természetesen a lementett

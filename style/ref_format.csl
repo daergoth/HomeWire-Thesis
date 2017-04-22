@@ -47,15 +47,15 @@
   <macro name="access">
     <choose>
       <if variable="URL">
-        <text value="Hivatkozás:" suffix=" "/>
-        <text variable="URL"/>
-        <group prefix=" [" suffix="]">
-          <!-- <text term="accessed" text-case="capitalize-first" suffix=" "/> -->
-          <date variable="accessed" prefix="[" suffix="]">
+        <text value="URL:" suffix=" "/>
+        <text variable="URL" suffix=" " />
+        <group prefix="(" suffix=")">
+          <text variable="note" />
+          <!-- <date variable="note" prefix="[" suffix="]">
             <date-part name="year"/>
             <date-part name="month" prefix=", "/>
             <date-part name="day" form="numeric-leading-zeros" prefix=" "/>
-          </date>
+          </date> -->
         </group>
       </if>
     </choose>
@@ -69,9 +69,6 @@
         <text variable="title"/>
       </else>
     </choose>
-  </macro>
-  <macro name="title-short">
-    <text variable="title-short"/>
   </macro>
   <macro name="publisher">
     <group delimiter=": ">
@@ -112,11 +109,12 @@
   </macro>
   <citation et-al-min="3" et-al-use-first="1" disambiguate-add-year-suffix="true" disambiguate-add-names="true" disambiguate-add-givenname="true">
     <layout prefix="[" suffix="]" delimiter="; ">
-      <text macro="title-short"/>
+      <text variable="annote"/>
     </layout>
   </citation>
-  <bibliography hanging-indent="true" et-al-min="4" et-al-use-first="1">
+  <bibliography  et-al-min="4" et-al-use-first="1">
     <layout>
+      <text variable="annote" prefix="[" suffix="]"/>
       <if variable="author">
         <text macro="author" suffix=","/>
         <date variable="issued" prefix=" " suffix=".">
@@ -154,7 +152,7 @@
           </group>
         </else-if>
         <else>
-          <group suffix=".">
+          <group font-style="italic">
             <text macro="title" prefix=" "/>
             <text macro="editor" prefix=" "/>
           </group>
@@ -171,7 +169,7 @@
           </group>
         </else>
       </choose>
-      <text prefix=" " macro="access" suffix="."/>
+      <text prefix=" " macro="access"/>
     </layout>
   </bibliography>
 </style>

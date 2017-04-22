@@ -48,7 +48,7 @@ viszont, ha jobban belegondolunk nincs is szükségünk arra, hogy például 10 
 részekre lebontva lássuk a múlt heti hőmérsékletet. Ami azt illeti még a percenkénti
 lebontás is túl aprónak tűnik bizonyos helyzetekben, de természetesen a lementett
 adatok segítségével elő tudunk állítani akár napi vagy havi átlagokat is.
-Mindezt grafikonokon és idő-soros diagrammokon mutatva, a felhasználó könnyedén tud
+Mindezt grafikonokon és idő-sorozatos diagrammokon mutatva, a felhasználó könnyedén tud
 következtetések levonni magának.
 
 ### Kezelőpanel

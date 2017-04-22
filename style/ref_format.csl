@@ -70,6 +70,9 @@
       </else>
     </choose>
   </macro>
+  <macro name="title-short">
+    <text variable="title-short"/>
+  </macro>
   <macro name="publisher">
     <group delimiter=": ">
       <text variable="publisher-place"/>
@@ -109,23 +112,10 @@
   </macro>
   <citation et-al-min="3" et-al-use-first="1" disambiguate-add-year-suffix="true" disambiguate-add-names="true" disambiguate-add-givenname="true">
     <layout prefix="[" suffix="]" delimiter="; ">
-      <group delimiter=", ">
-        <group delimiter=" ">
-          <text macro="title"/>
-          <text macro="year-date"/>
-        </group>
-        <group>
-          <label variable="locator" form="short"/>
-          <text variable="locator"/>
-        </group>
-      </group>
+      <text macro="title-short"/>
     </layout>
   </citation>
   <bibliography hanging-indent="true" et-al-min="4" et-al-use-first="1">
-    <sort>
-      <key macro="author"/>
-      <key variable="title"/>
-    </sort>
     <layout>
       <if variable="author">
         <text macro="author" suffix=","/>

@@ -99,20 +99,20 @@ választottam, mint végleges *flow* beviteli mód.
     "Nappali hőmérő" is under '20' AND
     TIME is later than 13:50
   then:
-    set "Nappali fűtés \#1" to '1',
-    set "Nappali fűtés \#2" to '1'
+    set "Nappali fűtés 1" to '1',
+    set "Nappali fűtés 2" to '1'
 }
 ```
 \begin{center}
 \captionof{figure}{Példa program egy lehetséges megvalósításhoz}
 \end{center}
 
-Ha a felhasználónak akarunk nagyon kedvezni, akkor létrehozhatnánk egy drag'n'drop felülettel a
+Ha a felhasználónak akarunk nagyon kedvezni, akkor létrehozhatnánk egy *drag'n'drop* felülettel a
 létrehozást. Minden feltétel vagy hatás típus a képernyő szélén létrehozhatnánk külön, majd behúzzuk
 egérrel oda, ahova szeretnénk tenni. Rendkívül átlátható lenne és pár perc alatt össze lehet rakni
 vele akár aránylag bonyolult szabályokat is. Ami mégis ezen mód ellen szól, hogy elég bonyolult feladat
 lehet a felületen ezt megvalósítani. Sajnos a felületet kezelő *Vaadin* keretrendszer nem támogat
-egyszerű drag'n'drop elemeket, ezért úgy döntöttem, hogy ez a bemeneti mód se felel meg elvárásaimnak.
+egyszerű *drag'n'drop* elemeket, ezért úgy döntöttem, hogy ez a bemeneti mód se felel meg elvárásaimnak.
 Túl bonyolult és aránytalanul hosszas lett volna implementálni számomra a rendszer többi részéhez képest.
 
 Végül egy olyan felülettel oldottam meg a problémát, ahol egy-egy oszlop jelképezi a feltételek és

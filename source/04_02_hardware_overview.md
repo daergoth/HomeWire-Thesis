@@ -35,7 +35,7 @@ Az aktorok a rendszer olyan részei, amik segítségével a rendszer képes vál
 végbe vinni a fizikai világban. Hasonló a helyzet a szenzorok esetéhez, hiszen
 ugyanúgy a mikrokontroller kezel mindent. Ugyanúgy alvó állapotban van az eszköz
 az idő nagy részében, viszont jelen esetben nem fix időközönként ébred fel, hanem
-amikor üzenetet kap a központtól. Ezek az üzenetek állapot beállítási parancsok,
+amikor üzenetet kap a központtól. Ezek az üzenetek állapotbeállítási parancsok,
 vagyis utasítják az eszközt, hogy állítson át vagy cselekedjen valamit. Ha megtörtént
 a parancs feldolgozása, az eszköz egyből elküldi a központi rendszernek az új állapotát,
 állapotjelentés formájában, akárcsak a szenzorok, majd megint alvó állapotba kerül

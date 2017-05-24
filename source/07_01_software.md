@@ -5,11 +5,11 @@ felhasználói felületek biztosítása, az adatok alapján történő döntésh
 
 Az egyik lényegesebb döntést az adatbázis tekintetében kellett meghozni, hiszen a rendkívül nagy
 mennyiségű adatot el kell mentenünk. A kihívást az jelentette, hogy miként lehet kevés tárhely
-használatával eltárolni a látszólag kevés rendszerességet tartalmazó beérkező állapot jelentéseket.
+használatával eltárolni a látszólag kevés rendszerességet tartalmazó beérkező állapotjelentéseket.
 Tehát lesz szó arról, hogy milyen adatbáziskezelő rendszerek jöhettek szóba és melyiknek milyen előnyei,
 illetve hátrányai lettek volna a fejlesztésnél. Mivel már említettem a \ref{ch:software_overview}.
 alfejezetben, hogy a *MongoDB*-t választottam az adatok perzisztens tárolására, ezért kitérek majd
-arra is, hogy milyen séma alapján lesznek mégis rendszerezve az eszköz adatok és, hogy miért jó az
+arra is, hogy milyen séma alapján lesznek mégis rendszerezve az eszköz adatok és hogy miért jó az
 említett adatbáziskezelő rendszer az ilyen szituációkban.
 
 Ahhoz, hogy a központi szerver létrejöhessen több keretrendszerre is szükségem volt. Így például a
@@ -26,6 +26,6 @@ Nagy hangvételű részt kap a *Flow-rendszer*, hiszen csak említve voltak a fo
 viszont rendesen megmagyarázva nem. A *Flow-rendszer* felelős a felhasználó által megadott szabályok
 kezeléséért és betartásáért. A működés gyors menetének megtartásáért kellett alkalmazni néhány megoldást,
 amik akár gyorsítótáraknak is tekinthetőek, amelyekre azért volt szükség, hogy ne kelljen túl nagy
-terhelést rakni az adatbázisra feleslegesen, még akkor se ha az adatbázis sokkal nagyobb terhelést is
+terhelést rakni az adatbázisra feleslegesen, még akkor se, ha az adatbázis sokkal nagyobb terhelést is
 kibírna. Szintén lesz szó arról, hogy mi történik akkor, ha beérkezik új adat a rendszerbe, milyen
-folyamatok indulnak el. 
+folyamatok indulnak el.

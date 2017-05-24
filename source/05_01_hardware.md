@@ -12,7 +12,7 @@ Másik fontos alkotóelem, a vezetéknélküli modul. Ebben a választásban má
 volt, hogy a kiválasztott modul kompatibilis legyen Arduinokkal. Habár nem volt egyszerű döntés,
 egy *nRF24L01+* adó-vevő integrált áramkört felhasználó modult választottam.
 
-Ahogy korábban említettem harmadik része az eszközeinknek változó, még pedig az határozza meg, hogy
+Ahogy korábban említettem harmadik része az eszközeinknek változó, mégpedig az határozza meg, hogy
 mit szeretnénk elérni az adott szenzorral vagy aktorral. A fejlesztés elején kiválasztottam pár
 eszköztípust, amit el szerettem volna készíteni és támogatni a kész rendszerben. A teljesség igénye
 nélkül be fogok mutatni pár szenzor és aktor modult, mint például a hőmérséklet mérésére szolgáló

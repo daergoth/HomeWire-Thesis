@@ -20,14 +20,14 @@ keretrendszer. Azonban ez csak a *Spring* alapcsomagja, emellett léteznek olyan
 a *Spring Data*, amely többféle adatelérési technológiát tesz egységesen használhatóvá vagy éppen
 a *Spring Security*, ami gondoskodik az alkalmazásunk autentikációjáról és autorizációjáról. Ezeknek
 a moduloknak a segítségévél és az alap *Spring* csomaggal tudunk igazán gyorsan és könnyedén
-webalkalmazásokat létrehozni.
+webalkalmazásokat létrehozni. [@SpringGuide]
 
 A *Spring Boot* tudja mindazt, amit fent leírtam és ahhoz, hogy használni tudjuk elég egy *Maven*
 függőséget és egy szülő projektet megadni a mi alkalmazásunk `pom.xml`-jében. Az \ref{fig:springboot_starter_pom}.
 ábrán látható `pom.xml` részlet megadása mellett további *starter* függőségek hozzáadásával a már
 korábban említett külső modulokat is konfiguráció-mentesen tudjuk használni az alkalmazásunkban. Ha
 például a *Spring Data JPA* implementációjának *Spring Boot* verzióját szeretnénk hozzáadni az
-alkalmazásunkhoz, akkor a `spring-boot-starter-data-jpa` *Maven* függőségre lesz csak szükségünk.  
+alkalmazásunkhoz, akkor a `spring-boot-starter-data-jpa` *Maven* függőségre lesz csak szükségünk. [@SpringBootGuide]
 ```xml
 <parent>
     <groupId>org.springframework.boot</groupId>
@@ -58,7 +58,7 @@ futó kliens kód folyamatosan kommunikál a szerverrel *HTTP* vagy *WebSocket* 
 Tehát, ha a felhasználó rákattint a gombra, egy üzenet generálódik a szervernek a gomb lenyomásról és
 erre a szerver egy értesítés megjelenítési üzenetet küld vissza, amit a kliens egyből végrehajt. A
 szerver-vezérelt modell rengeteg előnnyel járhat, javíthatja akár az alkalmazásunk biztonságát vagy
-éppenséggel könnyen változtathatóvá teszi felületet működtető logikát.
+éppenséggel könnyen változtathatóvá teszi felületet működtető logikát. [@VaadinArchitecture; @VaadinHome]
 ```java
 TextField name = new TextField("Your Name", "Vaadin");
 
@@ -74,7 +74,7 @@ VerticalLayout layout = new VerticalLayout(name, greetButton);
 \end{center}
 
 Természetesen vannak bonyolultabb beépített komponensek, mint egy szövegdoboz, például lenyíló menük
-vagy akár táblázatok. Azonban ha valamilyen oknál fogva nem találjuk a megfelelő komponenst, akkor
+vagy akár táblázatok. Azonban, ha valamilyen oknál fogva nem találjuk a megfelelő komponenst, akkor
 sajátokat is létrehozhatunk. Az \ref{fig:statistics_page}. ábrán a rendszer statisztikákért felelős
 felülete látható, aminek fejlesztése során szükségem volt egy idősor grafikont megjelenítő modulra.
 Egy kliens-oldali grafikonrajzoló külső programkönyvtár segítségével sikerült is létrehozni az egyedi

@@ -10,7 +10,7 @@ előnyei lehetnek egy okos otthon rendszernek. Természetesen az elsődleges dol
 e szempontból a spórolás lehetősége. Mindenki szeretne lefaragni a számlák összegéből
 például a fűtés kikapcsolásával, mikor nem vagyunk otthon, vagy a lámpák automatikus
 lekapcsolásával, ha éppen nem vagyunk a szobában. Másik vonzó tulajdonsága egy
-okos otthonnak, hogy rengeteg kényelmi funkciót tud nyújtani. Gomb nyomásra
+okos otthonnak, hogy rengeteg kényelmi funkciót tud nyújtani. Gombnyomásra
 leengedhetjük a ház összes sötétítőjét vagy a rendszer meglocsolhatja helyettünk
 a növényeket. Tervem, hogy ezt az általam fejlesztett rendszert a saját otthonomban
 használjam jelentős számú mérőeszközöket felhasználva.

@@ -5,7 +5,7 @@ az eszközökkel és egy TCP kapcsolatot a központi szerverrel. Ha ezt a két f
 szeretnénk elvégezni nagy eséllyel gondokba ütköznénk, aminek az lenne az oka, hogy az egyik kapcsolat
 eseményei nem lennének kellően lekezelve, amíg a másik kapcsolat kapja a figyelmet. Példa eset, az
 egyik kapcsolaton keresztül épp olvasás történik és a másikon üzenet érkezik. Viszont ez még nem azt
-jelenti, hogy a feladat megcsinálhatatlan egy futási szálon. Bizonyára lehetséges, de én úgy döntöttem,
+jelenti, hogy a feladat megcsinálhatatlan egy végrehajtási szálon. Bizonyára lehetséges, de én úgy döntöttem,
 hogy teljesítményi okokból inkább kettő szálon kezelem a kapcsolatokat. A futtató hardverünk nem fog
 gátakat szabni e szempontból, tehát nyugodtan használhatunk szálkezelést.
 
@@ -15,8 +15,8 @@ gátakat szabni e szempontból, tehát nyugodtan használhatunk szálkezelést.
 \end{center}
 
 Van akkor két végrehajtási szálunk, egy a TCP kapcsolatnak, egy a vezeték nélküli kapcsolatnak. Ha akármelyiken
-valamilyen üzenet érkezik, azt át kell alakítani a másik fél üzenetformájára és azon az oldalon tovább
-küldeni. Figyelnünk kell viszont, mivel, ha az egyik szál közvetlen bele szól a másik oldal kapcsolatába,
+valamilyen üzenet érkezik, azt át kell alakítani a másik fél üzenetformájára és azon az oldalon továbbküldeni.
+Figyelnünk kell viszont, mivel, ha az egyik szál közvetlen bele szól a másik oldal kapcsolatába,
 könnyen lehet, hogy elrontja azt. Ami azt illeti elsőnek elkövettem ezt a hibát és nem is
 működött túl megbízhatóan a rendszer. Megoldani a problémát nem volt nehéz, hiszen elég volt mindkét
 szálon létrehozni egy listát, amelyben ideiglenesen el lesznek tárolva azok az üzenetek, amiket majd
@@ -29,23 +29,23 @@ szál listájába. Mikor a másik szál oda kerül, hogy üzeneteket küld, akko
 ### Programkönyvtárak
 Említésre került a fejezet elején, hogy a *Boost* könyvtárcsomag egy részét használtam a TCP kapcsolat
 irányítására. A *Boost.Asio* programkönyvtár adatok aszinkron feldolgozására van fejlesztve és
-többek között képes `socket`-ek kezelésére is. Mivel a *Boost* könyvtárcsomag, olyan nagy jelentősséggel
+többek között képes `socket`-ek kezelésére is. Mivel a *Boost* könyvtárcsomag, olyan nagy jelentőséggel
 bír a C++ fejlesztésben, hogy szinte egy kiterjesztett Standard könyvtárként lehet tekinteni rá,
 egyértelmű választás volt, mint TCP kapcsolatkezelő könyvtár. Jelentős könnyebbséget hoz a C-beli
-`socket` programozáshoz képest. Ahhoz, hogy teljesítse a feladatát a TCP kapcsolat kezelő végrehajtási
-szálunk elsőnek azt kell megnéznie, hogy van-e beérkező üzenetünk a központi szervertől. Ha van, akkor
+`socket` programozáshoz képest. Ahhoz, hogy teljesítse a feladatát a TCP kapcsolatot kezelő végrehajtási
+szálunk, elsőnek azt kell megnéznie, hogy van-e beérkező üzenetünk a központi szervertől. Ha van, akkor
 addig olvassuk a bejövő adatot, amíg nem találkozunk egy sorvége karakterrel, mert így jelöltem az
 üzenet végét. Ehhez a `boost::asio::read_until()` függvényt használtam. A beérkezett
 üzenetet átfuttatva az átalakító logikánkon belerakjuk a vezeték nélküli kapcsolatot kezelő szál listájába.
 Ha mindez meg volt vagy esetleg nem is volt beérkező üzenet, akkor megpróbáljuk elérni a saját elküldendő
 üzenet listánkat. Ennek sikere attól függ, hogy éppen történik-e módosítása a listának. Sikeres elérés
-esetén végig megyünk a listán és egyenként elküldünk minden üzenetet. A küldést a
+esetén végigmegyünk a listán és egyenként elküldünk minden üzenetet. A küldést a
 `boost::asio::ip::tcp::socket.write_some()` függvény segítségével lehet megvalósítani. [@BoostAsioDocumentation]
 
 A fenti logikához képest csak egy kicsivel van több dolga a vezeték nélküli kapcsolatot kezelő végrehajtási
 szálnak. Az előző alfejezetekből tudhatjuk már, hogy az eszközökkel való kommunikáció az *RF24Mesh*
 programkönyvtárnak köszönhető. A különbség a másik oldalhoz képest annyi, hogy az *RF24Mesh* esetén
-az érkező üzenetek beolvasását megbonyolítja az üzenetek cimkézése. Már említettem, hogy ezeket a címkéket
+az érkező üzenetek beolvasását megbonyolítja az üzenetek címkézése. Már említettem, hogy ezeket a címkéket
 arra használjuk, hogy az eszközök kategóriáját (szenzor vagy aktor) meg tudjuk mondani. A beolvasás
 azzal kell kezdődjön, hogy megnézzük, milyen címkével rendelkezik az üzenet. Ez úgy történik, hogy az
 `RF24Network::peek()` függvény egy `RF24NetworkHeader` objektumba belerakja az üzenet fejléc részét.
